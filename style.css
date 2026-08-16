@@ -1,3 +1,8 @@
+/* ================================
+   FUNNGRO WEBSITE REVAMP
+   Responsive CSS
+================================ */
+
 * {
   margin: 0;
   padding: 0;
@@ -9,10 +14,11 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background: #07151d;
   color: #ffffff;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a {
@@ -20,14 +26,30 @@ a {
   color: inherit;
 }
 
-/* NAVBAR */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-header {
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.site-header {
   width: 100%;
   border-bottom: 1px solid #1c333d;
+  background: #07151d;
 }
 
 .navbar {
+  width: 100%;
   max-width: 1200px;
   margin: auto;
   padding: 22px 30px;
@@ -41,6 +63,7 @@ header {
 .logo {
   font-size: 30px;
   font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .logo span {
@@ -49,15 +72,18 @@ header {
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 28px;
 }
 
 .nav-links a {
   color: #b8c7cc;
   font-size: 15px;
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
   color: #42d38a;
 }
 
@@ -67,13 +93,23 @@ header {
   padding: 11px 20px;
   border-radius: 25px;
   font-weight: 700;
+  transition: transform 0.3s ease;
 }
 
-/* HERO */
+.nav-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* ================================
+   HERO
+================================ */
 
 .hero {
+  width: 100%;
   max-width: 1200px;
   margin: auto;
+
   padding: 100px 30px;
 
   display: grid;
@@ -85,7 +121,7 @@ header {
 .small-title {
   color: #42d38a;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 15px;
 }
@@ -93,6 +129,7 @@ header {
 .hero h1 {
   font-size: clamp(45px, 7vw, 75px);
   line-height: 1.05;
+  letter-spacing: -2px;
   margin-bottom: 25px;
 }
 
@@ -108,6 +145,7 @@ header {
 
 .hero-buttons {
   display: flex;
+  align-items: center;
   gap: 15px;
   margin-top: 35px;
   flex-wrap: wrap;
@@ -118,7 +156,8 @@ header {
   display: inline-block;
   padding: 14px 24px;
   border-radius: 30px;
-  font-weight: bold;
+  font-weight: 700;
+  transition: all 0.3s ease;
 }
 
 .primary-btn {
@@ -126,25 +165,46 @@ header {
   color: #06151c;
 }
 
-.secondary-btn {
-  border: 1px solid #40565e;
-  color: white;
+.primary-btn:hover {
+  transform: translateY(-3px);
 }
 
-/* HERO CARD */
+.secondary-btn {
+  border: 1px solid #40565e;
+  color: #ffffff;
+}
+
+.secondary-btn:hover {
+  border-color: #42d38a;
+  color: #42d38a;
+}
+
+
+/* ================================
+   HERO CARD
+================================ */
 
 .hero-card {
-  background: linear-gradient(145deg, #18313d, #0d2029);
+  background: linear-gradient(
+    145deg,
+    #18313d,
+    #0d2029
+  );
+
   border: 1px solid #29434d;
   border-radius: 28px;
+
   padding: 35px;
   min-height: 350px;
-  box-shadow: 0 25px 70px rgba(0,0,0,.25);
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
 }
 
 .card-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
   color: #a7b8bd;
   font-size: 12px;
   letter-spacing: 2px;
@@ -160,8 +220,8 @@ header {
 
 .hero-card h2 {
   font-size: 42px;
-  margin: 65px 0;
   line-height: 1.1;
+  margin: 65px 0;
 }
 
 .stats {
@@ -179,14 +239,20 @@ header {
   color: #aebec3;
 }
 
-/* STATS */
+
+/* ================================
+   STATISTICS
+================================ */
 
 .stats-section {
+  width: 100%;
   background: #10252e;
+
   padding: 45px 8%;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
   text-align: center;
   gap: 20px;
 }
@@ -200,20 +266,30 @@ header {
   color: #aebbc0;
 }
 
-/* SECTION */
+
+/* ================================
+   MAIN SECTIONS
+================================ */
 
 .section {
+  width: 100%;
   max-width: 1200px;
   margin: auto;
+
   padding: 100px 30px;
 }
 
 .section-title {
   font-size: 45px;
+  line-height: 1.15;
+  letter-spacing: -1px;
   margin-bottom: 45px;
 }
 
-/* SERVICE CARDS */
+
+/* ================================
+   SERVICE CARDS
+================================ */
 
 .service-grid {
   display: grid;
@@ -225,8 +301,12 @@ header {
   background: #10242e;
   border: 1px solid #213a44;
   border-radius: 20px;
+
   padding: 28px;
-  transition: .3s;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .service-card:hover {
@@ -241,6 +321,7 @@ header {
 
 .service-card h3 {
   margin-bottom: 12px;
+  font-size: 21px;
 }
 
 .service-card p {
@@ -248,10 +329,15 @@ header {
   font-size: 15px;
 }
 
-/* PROCESS */
+
+/* ================================
+   PROCESS
+================================ */
 
 .process {
+  width: 100%;
   background: #10242e;
+
   padding: 100px 8%;
 }
 
@@ -272,18 +358,22 @@ header {
 .step span {
   color: #42d38a;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .step h3 {
   margin: 15px 0 10px;
+  font-size: 20px;
 }
 
 .step p {
   color: #aebdc2;
 }
 
-/* TEEN CARD */
+
+/* ================================
+   TEEN CARD
+================================ */
 
 .teen-card {
   min-height: auto;
@@ -295,27 +385,36 @@ header {
   align-items: center;
 
   background: #102a33;
+
   margin-top: 15px;
   padding: 18px;
+
   border-radius: 12px;
 }
 
 .skill b {
   color: #42d38a;
+  font-size: 20px;
 }
 
-/* CTA */
+
+/* ================================
+   CTA
+================================ */
 
 .cta {
-  text-align: center;
-  padding: 110px 30px;
+  width: 100%;
   max-width: 850px;
   margin: auto;
+
+  text-align: center;
+  padding: 110px 30px;
 }
 
 .cta h2 {
   font-size: 55px;
   line-height: 1.1;
+  letter-spacing: -1px;
   margin-bottom: 20px;
 }
 
@@ -324,21 +423,30 @@ header {
   margin-bottom: 30px;
 }
 
-/* FOOTER */
+
+/* ================================
+   FOOTER
+================================ */
 
 footer {
   border-top: 1px solid #1c333d;
+
   padding: 40px 30px;
+
   text-align: center;
+
   color: #899ba1;
 }
 
 footer .logo {
-  color: white;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
-/* MOBILE */
+
+/* ================================
+   TABLET
+================================ */
 
 @media (max-width: 850px) {
 
@@ -349,14 +457,18 @@ footer .logo {
   .nav-links {
     order: 3;
     width: 100%;
+
     justify-content: center;
     flex-wrap: wrap;
+
     gap: 15px;
   }
 
   .hero {
     grid-template-columns: 1fr;
+
     padding: 70px 25px;
+
     gap: 45px;
   }
 
@@ -381,14 +493,31 @@ footer .logo {
   }
 }
 
+
+/* ================================
+   MOBILE
+================================ */
+
 @media (max-width: 550px) {
 
   .navbar {
     padding: 18px;
   }
 
+  .logo {
+    font-size: 27px;
+  }
+
   .nav-btn {
     display: none;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
   }
 
   .hero {
@@ -397,6 +526,7 @@ footer .logo {
 
   .hero h1 {
     font-size: 43px;
+    letter-spacing: -1px;
   }
 
   .hero-text > p:not(.small-title) {
@@ -415,6 +545,10 @@ footer .logo {
   .stats-section {
     grid-template-columns: 1fr 1fr;
     padding: 35px 15px;
+  }
+
+  .stats-section h2 {
+    font-size: 25px;
   }
 
   .section {
@@ -440,5 +574,29 @@ footer .logo {
 
   .cta h2 {
     font-size: 38px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* ================================
+   ACCESSIBILITY
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
   }
 }
